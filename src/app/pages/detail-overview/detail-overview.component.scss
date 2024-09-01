@@ -1,0 +1,216 @@
+.header {
+  border-radius: 15px;
+  background: #fff;
+  height: 150px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header-padding {
+  padding: 20px;
+}
+.title {
+  color: #6a6a6a;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 33.925px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.018px;
+  text-transform: capitalize;
+}
+.subtitle {
+  color: #ffb300;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+}
+.tab {
+  color: #d3d3d3;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.36px;
+  text-transform: capitalize;
+  cursor: pointer;
+  // margin-left: 20px;
+}
+
+.active-border {
+  border-radius: 18px;
+  background: #ffb300 !important;
+  width: 59.071px;
+  height: 2.893px;
+  flex-shrink: 0;
+}
+
+.border {
+  border-radius: 18px;
+  background: transparent;
+  width: 59.071px;
+  height: 2.893px;
+  flex-shrink: 0;
+}
+
+.card {
+  border-radius: 15px;
+  background: #fff;
+  width: 100%;
+}
+.head_card {
+  border-radius: 15px 15px 0px 0px;
+  background: #ffb300;
+  height: 61px;
+  color: #f5f5f5;
+  padding: 20px;
+  font-family: "Inter";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.45px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.border-bot {
+  // stroke-width: 1px;
+  border-bottom: 1px solid #ededed;
+  color: #000;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 260%; /* 33.8px */
+  letter-spacing: -0.39px;
+  text-transform: capitalize;
+}
+.count {
+  color: #ffb300;
+  font-family: Inter;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -1.56px;
+  text-transform: capitalize;
+}
+
+.footer_card {
+  border-radius: 0px 0px 15px 15px;
+  background: #dadada;
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  height: 36.678px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-count {
+  color: #ffb300;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1px;
+  letter-spacing: -1.56px;
+  text-transform: capitalize;
+}
+
+.body {
+  height: 70px;
+  color: #000;
+  font-family: Inter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.quality-card {
+  border-radius: 15px;
+  background: #fff;
+}
+.quality-card-header {
+  height: 80px;
+  border-bottom: 1px solid #adadad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  .heading {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.54px;
+    text-transform: capitalize;
+  }
+  .points {
+    color: #ffb300;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    text-transform: capitalize;
+  }
+}
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.col-1label {
+  color: #6a6a6a;
+
+  font-family: Inter;
+  font-size: 12.78px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.383px;
+  text-transform: capitalize;
+}
+.col-1sublabel {
+  color: #6a6a6a;
+
+  font-family: Inter;
+  font-size: 9.129px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.274px;
+  text-transform: capitalize;
+}

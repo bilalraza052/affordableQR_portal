@@ -1,0 +1,58 @@
+<div class="bg">
+  <div class="bg-2">
+    <div>
+      <img src="../../../assets/images/Affordable QR Logo auth.png">
+      @if(tabIndex == 0){
+        <div class="sign-in-card my-4">
+          <p class="heading">Login to your Account </p>
+          <div>
+            <input type="email" placeholder="Email">
+
+          </div>
+          <div>
+            <input type="password" placeholder="Password">
+
+          </div>
+          <button class="login-button">Login</button>
+
+        </div>
+        <span class="dont-account">Don’t have an account?</span><span (click)="tabIndex = 1" class="signup cursor-pointer">Sign Up</span>
+      }@else if (tabIndex == 1) {
+        <div class="sign-up-card">
+          <div>
+            <p class="heading">Create A New Account</p>
+            <p class="sub-heading">Use the form below to create a new account</p>
+            <div class="form">
+              <div>
+                <input type="text" placeholder="Username">
+              </div>
+              <div>
+                <input type="email" placeholder="Email">
+              </div>
+              <div>
+                <input type="password" placeholder="Password">
+              </div>
+              <div>
+                <input type="password" placeholder="Confirm Password">
+              </div>
+
+            </div>
+            <button class="login-button my-4">Sign up</button>
+          </div>
+
+
+          <span class="dont-account">Don’t have an account?</span><span (click)="tabIndex = 0" class="signup cursor-pointer">Login in</span>
+
+
+        </div>
+      }
+
+
+
+    </div>
+
+
+
+  </div>
+
+</div>

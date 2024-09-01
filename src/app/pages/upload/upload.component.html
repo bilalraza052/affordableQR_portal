@@ -1,0 +1,46 @@
+<app-page-header [pageTitle]="'Upload'" [isRefresh]="false"></app-page-header>
+
+<p class="subTitle">
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+</p>
+<div class="col-md-6">
+
+
+<ngx-file-drop
+  dropZoneLabel="Drop files here"
+  (onFileDrop)="dropped($event)"
+  accept=".xls,.xlsx,.csv"
+  (onFileOver)="fileOver($event)"
+  (onFileLeave)="fileLeave($event)"
+>
+  <ng-template
+    ngx-file-drop-content-tmp
+    let-openFileSelector="openFileSelector"
+  >
+    <div (click)="openFileSelector()">
+      <div class="text-center cursor-pointer">
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="54"
+        height="50"
+        viewBox="0 0 54 50"
+        fill="none"
+      >
+        <path
+          d="M7.37284 31.9719C5.58558 30.1458 4.23731 27.937 3.43014 25.5127C2.62298 23.0884 2.37811 20.5122 2.71406 17.9792C3.05001 15.4462 3.95799 13.0229 5.36921 10.8929C6.78043 8.76277 8.65788 6.98177 10.8594 5.68476C13.0608 4.38774 15.5286 3.60873 18.0758 3.40672C20.6229 3.2047 23.1826 3.585 25.5611 4.51878C27.9395 5.45257 30.0742 6.91537 31.8035 8.79637C33.5328 10.6774 34.8114 12.9273 35.5425 15.3756H39.8485C42.1711 15.3753 44.4323 16.1221 46.2979 17.5056C48.1635 18.8891 49.5347 20.836 50.2089 23.0586C50.8831 25.2813 50.8245 27.6618 50.0418 29.8486C49.2592 32.0354 47.7939 33.9125 45.8625 35.2026M26.6177 24.998V46.6485M26.6177 24.998L36.2401 34.6204M26.6177 24.998L16.9953 34.6204"
+          stroke="#9D9D9D"
+          stroke-width="4.81121"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <p class="my-2">{{files && files!=''? files :'Upload Files .XLS / .XLSX / .xltx'}}</p>
+      </div>
+
+    </div>
+  </ng-template>
+</ngx-file-drop>
+
+<button class="button-primary">Upload</button>
+</div>

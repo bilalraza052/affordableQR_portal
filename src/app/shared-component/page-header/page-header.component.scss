@@ -1,0 +1,57 @@
+.page-heading {
+  color: #000;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -3.15px;
+  text-transform: capitalize;
+  margin-right: 14px;
+}
+.searchbar{
+  display: flex;
+  align-items: center;
+  img{
+    margin-left: 5px;
+  }
+}
+
+.searchbar_input {
+  padding: 10px;
+  border-radius: 8.416px;
+  background: #fff;
+  width: 156px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  input {
+    outline: none;
+    border: none;
+    color: #adadad;
+    // text-align: center;
+    font-family: 'Inter';
+    font-size: 10.099px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.303px;
+    text-transform: capitalize;
+    margin-left: 5px;
+
+
+  }
+  ::placeholder{
+    color: #adadad;
+    // text-align: center;
+    font-family: 'Inter';
+    font-size: 10.099px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.303px;
+    text-transform: capitalize;
+
+  }
+}

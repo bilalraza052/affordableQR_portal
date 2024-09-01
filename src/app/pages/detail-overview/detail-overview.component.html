@@ -1,0 +1,506 @@
+<div>
+  <div class="header">
+    <div>
+      <div class="header-padding">
+        <span class="title">Alfalo</span>
+        <p class="subtitle">Lorem Ipsum is simply dummy text</p>
+        <svg
+          (click)="back()"
+          class="close"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <rect
+            x="0.883301"
+            y="0.439178"
+            width="23.0529"
+            height="23.0529"
+            rx="4.12756"
+            fill="#FFB300"
+          />
+          <path
+            d="M8.83211 15.5433L15.9875 8.38789M8.83211 8.38789L15.9875 15.5433"
+            stroke="white"
+            stroke-width="1.44562"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="d-flex align-items-center px-4">
+        <span class="tab mx-2" (click)="tabIndex = 0">
+          Overview
+
+          <div class="my-2 border" [class.active-border]="tabIndex == 0"></div>
+        </span>
+        <span class="tab" (click)="tabIndex = 1">
+          Quality
+
+          <div class="my-2 border" [class.active-border]="tabIndex == 1"></div>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  @if(tabIndex == 0){
+  <ng-container>
+    <div class="row my-4">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="head_card">
+            <span>About The Program</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M14.5546 11.818V8.04804C14.5545 7.88277 14.5108 7.72044 14.4281 7.57735C14.3454 7.43426 14.2265 7.31543 14.0834 7.23279L10.7847 5.34783C10.6414 5.26511 10.4789 5.22156 10.3134 5.22156C10.148 5.22156 9.98548 5.26511 9.8422 5.34783L6.54351 7.23279C6.40037 7.31543 6.28149 7.43426 6.19878 7.57735C6.11606 7.72044 6.07244 7.88277 6.07227 8.04804V11.818C6.07244 11.9833 6.11606 12.1456 6.19878 12.2887C6.28149 12.4318 6.40037 12.5506 6.54351 12.6332L9.8422 14.5182C9.98548 14.6009 10.148 14.6445 10.3134 14.6445C10.4789 14.6445 10.6414 14.6009 10.7847 14.5182L14.0834 12.6332C14.2265 12.5506 14.3454 12.4318 14.4281 12.2887C14.5108 12.1456 14.5545 11.9833 14.5546 11.818Z"
+                stroke="white"
+                stroke-width="0.942484"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.3134 11.818C11.3545 11.818 12.1984 10.9741 12.1984 9.93301C12.1984 8.89197 11.3545 8.04804 10.3134 8.04804C9.2724 8.04804 8.42848 8.89197 8.42848 9.93301C8.42848 10.9741 9.2724 11.818 10.3134 11.818Z"
+                stroke="white"
+                stroke-width="0.942484"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <rect
+                x="1.34796"
+                y="0.967315"
+                width="17.9314"
+                height="17.9314"
+                rx="2.9496"
+                stroke="white"
+                stroke-width="0.81311"
+              />
+            </svg>
+          </div>
+          <div class="p-4">
+            <div
+              class="d-flex align-items-center justify-content-between border-bot"
+            >
+              <span>Program sponsor</span>
+              <span>VAA</span>
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-between border-bot"
+            >
+              <span>Performance year</span>
+              <span>2018</span>
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-between border-bot"
+            >
+              <span>Number of patients</span>
+              <span>20,409</span>
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-between border-bot"
+            >
+              <span>Number of providers </span>
+              <span>49</span>
+            </div>
+          </div>
+        </div>
+        <div class="card my-2">
+          <div class="head_card">
+            <span>Modeled Composite score </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M14.5546 11.818V8.04804C14.5545 7.88277 14.5108 7.72044 14.4281 7.57735C14.3454 7.43426 14.2265 7.31543 14.0834 7.23279L10.7847 5.34783C10.6414 5.26511 10.4789 5.22156 10.3134 5.22156C10.148 5.22156 9.98548 5.26511 9.8422 5.34783L6.54351 7.23279C6.40037 7.31543 6.28149 7.43426 6.19878 7.57735C6.11606 7.72044 6.07244 7.88277 6.07227 8.04804V11.818C6.07244 11.9833 6.11606 12.1456 6.19878 12.2887C6.28149 12.4318 6.40037 12.5506 6.54351 12.6332L9.8422 14.5182C9.98548 14.6009 10.148 14.6445 10.3134 14.6445C10.4789 14.6445 10.6414 14.6009 10.7847 14.5182L14.0834 12.6332C14.2265 12.5506 14.3454 12.4318 14.4281 12.2887C14.5108 12.1456 14.5545 11.9833 14.5546 11.818Z"
+                stroke="white"
+                stroke-width="0.942484"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M10.3134 11.818C11.3545 11.818 12.1984 10.9741 12.1984 9.93301C12.1984 8.89197 11.3545 8.04804 10.3134 8.04804C9.2724 8.04804 8.42848 8.89197 8.42848 9.93301C8.42848 10.9741 9.2724 11.818 10.3134 11.818Z"
+                stroke="white"
+                stroke-width="0.942484"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <rect
+                x="1.34796"
+                y="0.967315"
+                width="17.9314"
+                height="17.9314"
+                rx="2.9496"
+                stroke="white"
+                stroke-width="0.81311"
+              />
+            </svg>
+          </div>
+          <div class="p-10">
+            <span class="count">65.43</span>
+          </div>
+          <div class="footer_card">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="head_card">
+            <span>Quality</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M8.46484 13.4451L11.977 9.933L8.46484 6.42087"
+                stroke="white"
+                stroke-width="1.17071"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <rect
+                x="1.25519"
+                y="0.967315"
+                width="17.9314"
+                height="17.9314"
+                rx="2.9496"
+                stroke="white"
+                stroke-width="0.81311"
+              />
+            </svg>
+          </div>
+          <div class="d-flex flex-wrap p-4">
+            <div class="col-md-4">
+              <div>
+                <span class="count">35.6</span>
+                <p class="sub-count">/60.0</p>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div
+                class="d-flex align-items-center justify-content-between border-bot"
+              >
+                <span>Measures</span>
+                <span>29.6/60 Points</span>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-between border-bot"
+              >
+                <span> Measures Selection Bonus</span>
+                <span>6/6 </span>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-between border-bot"
+              >
+                <span>End-To-End reporting Bonus</span>
+                <span>0/6 Points</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card my-2">
+          <div class="head_card">
+            <span>Promoting Interoperability</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M8.46484 13.4451L11.977 9.933L8.46484 6.42087"
+                stroke="white"
+                stroke-width="1.17071"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <rect
+                x="1.25519"
+                y="0.967315"
+                width="17.9314"
+                height="17.9314"
+                rx="2.9496"
+                stroke="white"
+                stroke-width="0.81311"
+              />
+            </svg>
+          </div>
+          <div class="body">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </div>
+        <div class="card my-2">
+          <div class="head_card">
+            <span>Improvement Activities</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M8.46484 13.4451L11.977 9.933L8.46484 6.42087"
+                stroke="white"
+                stroke-width="1.17071"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <rect
+                x="1.25519"
+                y="0.967315"
+                width="17.9314"
+                height="17.9314"
+                rx="2.9496"
+                stroke="white"
+                stroke-width="0.81311"
+              />
+            </svg>
+          </div>
+          <div class="d-flex flex-wrap p-4">
+            <div class="col-md-4">
+              <div>
+                <span class="count">35.6</span>
+                <p class="sub-count">/60.0</p>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div
+                class="d-flex align-items-center justify-content-between border-bot"
+              >
+                <span>Measures</span>
+                <span>29.6/60 Points</span>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-between border-bot"
+              >
+                <span> Measures Selection Bonus</span>
+                <span>6/6 </span>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-between border-bot"
+              >
+                <span>End-To-End reporting Bonus</span>
+                <span>0/6 Points</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  }@else if(tabIndex == 1){
+
+  <ng-container>
+    <div class="quality-card my-2">
+      <div class="quality-card-header">
+        <span class="heading">Highest - Performing Measure Set</span>
+        <span class="points">29.6/60 points</span>
+      </div>
+
+      <div class="data-row">
+        <div>
+          <span class="col-1label">Anesthesiology Smoking Abstinence</span>
+          <p class="col-1sublabel">MPS-404</p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="158"
+            height="28"
+            viewBox="0 0 158 28"
+            fill="none"
+          >
+            <rect
+              x="157.88"
+              y="27.2419"
+              width="157.453"
+              height="26.5872"
+              rx="3.65142"
+              transform="rotate(180 157.88 27.2419)"
+              fill="#FFB300"
+            />
+            <path
+              d="M157.88 23.5905C157.88 25.6071 156.245 27.2419 154.228 27.2419H125.866V0.65468H154.228C156.245 0.65468 157.88 2.28948 157.88 4.3061V23.5905Z"
+              fill="#FFEBBD"
+            />
+          </svg>
+        </div>
+
+          <span class="col-1label">3.5 points</span>
+          <span class="col-1label">100.00%</span>
+          <span class="col-1label">60/60</span>
+          <span class="col-1label">100%RR</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M0.708649 1.20685L4.22078 4.71898L7.73291 1.20685" stroke="#737373" stroke-width="1.17071" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+      <div class="data-row">
+        <div>
+          <span class="col-1label">Anesthesiology Smoking Abstinence</span>
+          <p class="col-1sublabel">MPS-404</p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="158"
+            height="28"
+            viewBox="0 0 158 28"
+            fill="none"
+          >
+            <rect
+              x="157.88"
+              y="27.2419"
+              width="157.453"
+              height="26.5872"
+              rx="3.65142"
+              transform="rotate(180 157.88 27.2419)"
+              fill="#FFB300"
+            />
+            <path
+              d="M157.88 23.5905C157.88 25.6071 156.245 27.2419 154.228 27.2419H125.866V0.65468H154.228C156.245 0.65468 157.88 2.28948 157.88 4.3061V23.5905Z"
+              fill="#FFEBBD"
+            />
+          </svg>
+        </div>
+
+          <span class="col-1label">3.5 points</span>
+          <span class="col-1label">100.00%</span>
+          <span class="col-1label">60/60</span>
+          <span class="col-1label">100%RR</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M0.708649 1.20685L4.22078 4.71898L7.73291 1.20685" stroke="#737373" stroke-width="1.17071" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+      <div class="data-row">
+        <div>
+          <span class="col-1label">Anesthesiology Smoking Abstinence</span>
+          <p class="col-1sublabel">MPS-404</p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="158"
+            height="28"
+            viewBox="0 0 158 28"
+            fill="none"
+          >
+            <rect
+              x="157.88"
+              y="27.2419"
+              width="157.453"
+              height="26.5872"
+              rx="3.65142"
+              transform="rotate(180 157.88 27.2419)"
+              fill="#FFB300"
+            />
+            <path
+              d="M157.88 23.5905C157.88 25.6071 156.245 27.2419 154.228 27.2419H125.866V0.65468H154.228C156.245 0.65468 157.88 2.28948 157.88 4.3061V23.5905Z"
+              fill="#FFEBBD"
+            />
+          </svg>
+        </div>
+
+          <span class="col-1label">3.5 points</span>
+          <span class="col-1label">100.00%</span>
+          <span class="col-1label">60/60</span>
+          <span class="col-1label">100%RR</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M0.708649 1.20685L4.22078 4.71898L7.73291 1.20685" stroke="#737373" stroke-width="1.17071" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+      <div class="data-row">
+        <div>
+          <span class="col-1label">Anesthesiology Smoking Abstinence</span>
+          <p class="col-1sublabel">MPS-404</p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="158"
+            height="28"
+            viewBox="0 0 158 28"
+            fill="none"
+          >
+            <rect
+              x="157.88"
+              y="27.2419"
+              width="157.453"
+              height="26.5872"
+              rx="3.65142"
+              transform="rotate(180 157.88 27.2419)"
+              fill="#FFB300"
+            />
+            <path
+              d="M157.88 23.5905C157.88 25.6071 156.245 27.2419 154.228 27.2419H125.866V0.65468H154.228C156.245 0.65468 157.88 2.28948 157.88 4.3061V23.5905Z"
+              fill="#FFEBBD"
+            />
+          </svg>
+        </div>
+
+          <span class="col-1label">3.5 points</span>
+          <span class="col-1label">100.00%</span>
+          <span class="col-1label">60/60</span>
+          <span class="col-1label">100%RR</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M0.708649 1.20685L4.22078 4.71898L7.73291 1.20685" stroke="#737373" stroke-width="1.17071" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+      <div class="data-row">
+        <div>
+          <span class="col-1label">Anesthesiology Smoking Abstinence</span>
+          <p class="col-1sublabel">MPS-404</p>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="158"
+            height="28"
+            viewBox="0 0 158 28"
+            fill="none"
+          >
+            <rect
+              x="157.88"
+              y="27.2419"
+              width="157.453"
+              height="26.5872"
+              rx="3.65142"
+              transform="rotate(180 157.88 27.2419)"
+              fill="#FFB300"
+            />
+            <path
+              d="M157.88 23.5905C157.88 25.6071 156.245 27.2419 154.228 27.2419H125.866V0.65468H154.228C156.245 0.65468 157.88 2.28948 157.88 4.3061V23.5905Z"
+              fill="#FFEBBD"
+            />
+          </svg>
+        </div>
+
+          <span class="col-1label">3.5 points</span>
+          <span class="col-1label">100.00%</span>
+          <span class="col-1label">60/60</span>
+          <span class="col-1label">100%RR</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M0.708649 1.20685L4.22078 4.71898L7.73291 1.20685" stroke="#737373" stroke-width="1.17071" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+    </div>
+  </ng-container>
+  }
+</div>
