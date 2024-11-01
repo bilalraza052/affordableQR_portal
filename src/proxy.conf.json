@@ -1,0 +1,9 @@
+{
+    "/api":{
+        "target":"https://affordableqrbackend.creatixtech.com/",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    }
+
+}

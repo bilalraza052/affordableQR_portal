@@ -9,12 +9,15 @@ import { SettingComponent } from './pages/setting/setting.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { DetailOverviewComponent } from './pages/detail-overview/detail-overview.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { AuthGuard } from './Guards/auth.guard';
+import { UsersComponent } from './pages/users/users.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 export const routes: Routes = [
   {
     path:'',
     component:MainLayoutComponent,
-    // canActivateChild:[AuthGuard],
+    canActivateChild:[AuthGuard],
     children:[
       {
         path:'',redirectTo:'group',pathMatch:'full',
@@ -34,6 +37,12 @@ export const routes: Routes = [
       },
       {
         path:'settings', component:SettingComponent
+      },
+      {
+        path:'users', component:UsersComponent
+      },
+      {
+        path:'add-users', component:RegisterComponent
       },
       {
         path:'detail', component:DetailComponent

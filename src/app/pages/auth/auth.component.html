@@ -6,14 +6,14 @@
         <div class="sign-in-card my-4">
           <p class="heading">Login to your Account </p>
           <div>
-            <input type="email" placeholder="Email">
+            <input type="email" (keyup.enter)="login()" [(ngModel)]="model.email" placeholder="Email">
 
           </div>
           <div>
-            <input type="password" placeholder="Password">
+            <input type="password" (keyup.enter)="login()" [(ngModel)]="model.password" placeholder="Password">
 
           </div>
-          <button class="login-button">Login</button>
+          <button class="login-button" (click)="login()">Login</button>
 
         </div>
         <span class="dont-account">Don’t have an account?</span><span (click)="tabIndex = 1" class="signup cursor-pointer">Sign Up</span>
@@ -24,20 +24,37 @@
             <p class="sub-heading">Use the form below to create a new account</p>
             <div class="form">
               <div>
-                <input type="text" placeholder="Username">
+                <input type="text" [(ngModel)]="registerModel.firstName" placeholder="First Name">
               </div>
               <div>
-                <input type="email" placeholder="Email">
+                <input type="text" [(ngModel)]="registerModel.lastName" placeholder="Last Name">
               </div>
               <div>
-                <input type="password" placeholder="Password">
+                <input type="text" [(ngModel)]="registerModel.userName"  placeholder="Username">
               </div>
               <div>
-                <input type="password" placeholder="Confirm Password">
+                <input type="text" [(ngModel)]="registerModel.organization"  placeholder="Organization">
+              </div>
+              <div>
+                <input type="email" [(ngModel)]="registerModel.email"  placeholder="Email">
+              </div>
+              <div>
+                <input type="password"[(ngModel)]="registerModel.password"  placeholder="Password">
+              </div>
+              <div>
+                <input type="password" [(ngModel)]="registerModel.password_confirmation"  placeholder="Confirm Password">
+              </div>
+              <div>
+                <select name="" id=""[(ngModel)]="registerModel.roleId">
+                  <option [value]="undefined">Roles</option>
+                  @for(item of roleList;track item){
+                    <option [value]="item.id">{{item.role}}</option>
+                  }
+                </select>
               </div>
 
             </div>
-            <button class="login-button my-4">Sign up</button>
+            <button (click)="signUp()" class="login-button my-4">Sign up</button>
           </div>
 
 

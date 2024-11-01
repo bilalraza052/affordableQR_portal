@@ -1,0 +1,35 @@
+<app-page-header [pageTitle]="'Register'" [isRefresh]="false"></app-page-header>
+
+<div class="form sign-up-card">
+    <div>
+      <input type="text" [(ngModel)]="registerModel.firstName" placeholder="First Name">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="registerModel.lastName" placeholder="Last Name">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="registerModel.userName"  placeholder="Username">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="registerModel.organization"  placeholder="Organization">
+    </div>
+    <div>
+      <input type="email" [(ngModel)]="registerModel.email"  placeholder="Email">
+    </div>
+    <div>
+      <input type="password"[(ngModel)]="registerModel.password"  placeholder="Password">
+    </div>
+    <div>
+      <input type="password" [(ngModel)]="registerModel.password_confirmation"  placeholder="Confirm Password">
+    </div>
+    <div>
+      <select name="" id=""[(ngModel)]="registerModel.roleId">
+        <option [value]="undefined">Roles</option>
+        @for(item of roleList;track item){
+          <option [value]="item.id">{{item.role}}</option>
+        }
+      </select>
+    </div>
+
+  </div>
+  <button (click)="signUp()" class="login-button my-4">Sign up</button>

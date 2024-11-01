@@ -1,0 +1,83 @@
+.sign-up-card {
+  border-radius: 30.257px;
+  background: #fff;
+  padding: 20px;
+  width: 40vw;
+  .heading {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24.997px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.75px;
+    margin: 1px;
+  }
+  .sub-heading {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 9.732px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.292px;
+  }
+  select{
+    border-radius: 8.94px;
+    background: #f0f0f0;
+    outline: none;
+    border: none;
+    padding: 14px;
+    width: 406.917px;
+    height: 47.546px;
+    -webkit-backdrop-filter: blur(22.3510932922px);
+    backdrop-filter: blur(22.3510932922px);
+    color: #737373;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  input {
+    border-radius: 8.94px;
+    background: #f0f0f0;
+    outline: none;
+    border: none;
+    padding: 20px;
+
+    width: 406.917px;
+    height: 47.546px;
+    backdrop-filter: blur(22.351093292236328px);
+    color: #737373;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+    ::placeholder {
+      color: #737373;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}
+
+.label {
+  color: #828282;
+  font-family: "Inter";
+  font-size: 11.623px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

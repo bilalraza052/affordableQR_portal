@@ -1,5 +1,6 @@
 <div class="my-2">
-  <div class="searchbar">
+ @if(isSearchable){
+  <div class="searchbar" >
     <div class="searchbar_input">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,6 +20,8 @@
       <input type="text" class="w-100" placeholder="Search By Name" />
     </div>
   </div>
+ }
+
 
   <div class="my-4">
     <div class="scroll px-2">

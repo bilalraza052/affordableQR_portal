@@ -10,7 +10,8 @@
 <ngx-file-drop
   dropZoneLabel="Drop files here"
   (onFileDrop)="dropped($event)"
-  accept=".xls,.xlsx,.csv"
+  [multiple]="false"
+  accept=".xls,.xlsx,.csv,.pdf,.txt"
   (onFileOver)="fileOver($event)"
   (onFileLeave)="fileLeave($event)"
 >
@@ -35,12 +36,19 @@
           stroke-linejoin="round"
         />
       </svg>
-      <p class="my-2">{{files && files!=''? files :'Upload Files .XLS / .XLSX / .xltx'}}</p>
+      <p class="my-2">{{files && files!=''? files :'Upload Files .XLS / .XLSX / .xltx / .pdf / .txt'}}</p>
       </div>
 
     </div>
   </ng-template>
 </ngx-file-drop>
 
-<button class="button-primary">Upload</button>
+<button class="button-primary" (click)="uploadFile()">
+
+  @if(uploadLoading){
+    <mat-spinner color="secondary" [diameter]="20"> </mat-spinner>
+  }@else {
+    Upload
+  }
+</button>
 </div>

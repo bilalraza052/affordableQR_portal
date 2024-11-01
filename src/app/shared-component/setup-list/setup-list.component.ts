@@ -10,6 +10,7 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 export class SetupListComponent {
   @Input({ required: true }) datasource: any[]=[];
   @Input({ required: true }) columns: any[]=[];
+  @Input() isSearchable: boolean = true;
   @Output() onRowClick = new EventEmitter<any>
   // datasource:any[]=[
   //   {
