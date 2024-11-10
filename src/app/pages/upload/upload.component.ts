@@ -90,7 +90,7 @@ export class UploadComponent extends BaseController<any> {
     this.uploadLoading = true
     const res= await (await this.main.uploadFile(filetype[0],this.currentFile)).toPromise();
     this.uploadLoading = false
-    if(!res.IsSuccessful) return this.showError(res.Errors)
+    if(!res.IsSuccessful) return this.showError(res.Errors?.message)
     this.showError("Upload Successfully");
     this.files = ''
     this.currentFile = ''

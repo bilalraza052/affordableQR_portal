@@ -12,12 +12,14 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { UsersComponent } from './pages/users/users.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { RightsGuard } from './Guards/rights.guard';
+import { NotificationComponent } from './pages/notification/notification.component';
 
 export const routes: Routes = [
   {
     path:'',
     component:MainLayoutComponent,
-    canActivateChild:[AuthGuard],
+    canActivateChild:[AuthGuard,RightsGuard],
     children:[
       {
         path:'',redirectTo:'group',pathMatch:'full',
@@ -49,6 +51,9 @@ export const routes: Routes = [
       },
       {
         path:'detail-overview', component:DetailOverviewComponent
+      },
+      {
+        path:'notification', component:NotificationComponent
       },
 
 
