@@ -85,6 +85,7 @@ export class UploadComponent extends BaseController<any> {
     super();
   }
   async uploadFile(){
+    if(!this.currentFile) return this.showError("Please Select any file")
     const filetype = this.files?.split('.');
     if(!filetype || (filetype && filetype.length == 0)) return
     this.uploadLoading = true

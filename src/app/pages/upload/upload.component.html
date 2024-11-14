@@ -36,6 +36,7 @@
           stroke-linejoin="round"
         />
       </svg>
+      <p class="my-2">Click here to upload</p>
       <p class="my-2">{{files && files!=''? files :'Upload Files .XLS / .XLSX / .xltx / .pdf / .txt'}}</p>
       </div>
 
@@ -48,7 +49,7 @@
   @if(uploadLoading){
     <mat-spinner color="secondary" [diameter]="20"> </mat-spinner>
   }@else {
-    Upload
+    Submit
   }
 </button>
 </div>
