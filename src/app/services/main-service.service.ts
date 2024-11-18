@@ -53,6 +53,22 @@ export class MainServiceService extends BaseService {
       roleId: [1,2],
     },
     {
+      route: 'blog-categories',
+      label: 'Blog Categories',
+      svg:` <svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 19 22" fill="none">
+                    <path d="M13.294 3.23763H15.2196C15.7303 3.23763 16.2201 3.44051 16.5812 3.80162C16.9423 4.16274 17.1452 4.65252 17.1452 5.16322V18.6423C17.1452 19.153 16.9423 19.6428 16.5812 20.0039C16.2201 20.3651 15.7303 20.5679 15.2196 20.5679H3.66607C3.15537 20.5679 2.66559 20.3651 2.30447 20.0039C1.94335 19.6428 1.74048 19.153 1.74048 18.6423V5.16322C1.74048 4.65252 1.94335 4.16274 2.30447 3.80162C2.66559 3.44051 3.15537 3.23763 3.66607 3.23763H5.59166M6.55445 12.8656H12.3312M6.55445 1.31204H12.3312C12.863 1.31204 13.294 1.7431 13.294 2.27484V4.20043C13.294 4.73216 12.863 5.16322 12.3312 5.16322H6.55445C6.02271 5.16322 5.59166 4.73216 5.59166 4.20043V2.27484C5.59166 1.7431 6.02271 1.31204 6.55445 1.31204Z" stroke="white" stroke-width="1.92559" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>`,
+      roleId: [1,2],
+    },
+    {
+      route: 'blogs',
+      label: 'Blogs',
+      svg:` <svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 19 22" fill="none">
+                    <path d="M13.294 3.23763H15.2196C15.7303 3.23763 16.2201 3.44051 16.5812 3.80162C16.9423 4.16274 17.1452 4.65252 17.1452 5.16322V18.6423C17.1452 19.153 16.9423 19.6428 16.5812 20.0039C16.2201 20.3651 15.7303 20.5679 15.2196 20.5679H3.66607C3.15537 20.5679 2.66559 20.3651 2.30447 20.0039C1.94335 19.6428 1.74048 19.153 1.74048 18.6423V5.16322C1.74048 4.65252 1.94335 4.16274 2.30447 3.80162C2.66559 3.44051 3.15537 3.23763 3.66607 3.23763H5.59166M6.55445 12.8656H12.3312M6.55445 1.31204H12.3312C12.863 1.31204 13.294 1.7431 13.294 2.27484V4.20043C13.294 4.73216 12.863 5.16322 12.3312 5.16322H6.55445C6.02271 5.16322 5.59166 4.73216 5.59166 4.20043V2.27484C5.59166 1.7431 6.02271 1.31204 6.55445 1.31204Z" stroke="white" stroke-width="1.92559" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>`,
+      roleId: [1,2],
+    },
+    {
       route: 'settings',
       label: 'Settings',
       svg:` <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 21 23" fill="none">
@@ -78,6 +94,12 @@ export class MainServiceService extends BaseService {
   }
   async users(){
     return await this.Get("all-users")
+  }
+  async blogs(){
+    return await this.Get("blogs")
+  }
+  async blogCategories(){
+    return await this.Get("blog-categories")
   }
   async uploadFile(fileType:string,base64:string){
     const body ={

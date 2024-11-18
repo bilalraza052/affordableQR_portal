@@ -72,5 +72,24 @@
   text-transform: capitalize;
 }
 
+.f-s-17{
+  font-size: 17px!important;
+}
+// .f-s-24{
+//   font-size: 24px!important;
+// }
+// .f-w-b{
+//   font-weight: 600!important;
+// }
+
+   .mdc-dialog__surface {
+    background-color: white !important;
+    color: black!important;
+  }
+  .mat-mdc-dialog-container .mdc-dialog__title{
+    color: black!important;
+  }
+
+// }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,2 +1,2 @@
 <app-page-header [pageTitle]="'Notification'"></app-page-header>
-<app-setup-list [isSearchable]="false" [columns]="columns" [datasource]="datasource"></app-setup-list>
+<app-setup-list (onDeleteEvent)="deleteRecord($event)" [isSearchable]="false" [columns]="columns" [datasource]="datasource"></app-setup-list>

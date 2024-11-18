@@ -14,6 +14,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RightsGuard } from './Guards/rights.guard';
 import { NotificationComponent } from './pages/notification/notification.component';
+import { BlogCategoryComponent } from './pages/blog-category/blog-category.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
 
 export const routes: Routes = [
   {
@@ -54,6 +56,12 @@ export const routes: Routes = [
       },
       {
         path:'notification', component:NotificationComponent
+      },
+      {
+        path:'blog-categories', component:BlogCategoryComponent
+      },
+      {
+        path:'blogs', component:BlogsComponent
       },
 
 

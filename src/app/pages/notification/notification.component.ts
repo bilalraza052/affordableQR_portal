@@ -15,6 +15,12 @@ export class NotificationComponent extends BaseController<any> {
   datasource:any[]=[]
   columns:any[]=[
     {
+      label:'Delete',
+      key:'delete',
+      displayType:'delete'
+    },
+
+    {
       label:'First Name',
       key:'firstName',
       objectName:'user'
@@ -34,7 +40,7 @@ export class NotificationComponent extends BaseController<any> {
       key:'fileLink',
       displayType:'download',
     }
-  
+
     // {
     //   label:'Role',
     //   key:'role',
@@ -47,6 +53,18 @@ export class NotificationComponent extends BaseController<any> {
       return this.showError(res.Errors)
     }
     this.datasource = res.Data
+
+  }
+  async deleteRecord(row:any){
+    this.mainSerice.isCustomControler = true
+    this.mainSerice.customController = 'delete-file'
+    const res= await (await this.mainSerice.Delete(row.id)).toPromise();
+    this.mainSerice.customController = ''
+    this.mainSerice.isCustomControler = false
+    if(!res.IsSuccessful) return this.showError(res.Errors);
+    this.showError("Delete Successfully");
+    this.dialog?.closeAll()
+    this.notifications()
 
   }
   constructor(public mainSerice:MainServiceService){

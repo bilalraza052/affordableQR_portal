@@ -1,0 +1,36 @@
+<app-page-header [pageTitle]="'Blog Categories'"></app-page-header>
+
+<app-setup-list (onDeleteEvent)="deleteRecord($event)" (onAddEditEvent)="openForm($event)" [isCrud]="true" [isAdd]="true" [columns]="columns" [isSearchable]="false"  [datasource]="datasource" ></app-setup-list>
+
+
+<ng-template #formComponent let-data>
+  <!-- <div class="px-4"> -->
+    <div mat-dialog-title>
+      <div class="d-flex align-items-center justify-content-between">
+        <span class="f-s-24 f-w-b">{{model.id ? 'Edit' :'Add'}} Blog Categories</span>
+        <span class="material-icons cursor-pointer" mat-dialog-close="">close</span>
+
+      </div>
+
+    </div>
+
+    <mat-dialog-content>
+
+      <input type="text" [(ngModel)]="model.title"  placeholder="Category Name">
+
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="button-primary" (click)="save()">
+          @if(saveLoader){
+            <mat-spinner color="secondary" [diameter]="20"> </mat-spinner>
+          }@else {
+            Save
+          }
+        </button>
+    </mat-dialog-actions>
+
+  <!-- </div> -->
+</ng-template>
+
+

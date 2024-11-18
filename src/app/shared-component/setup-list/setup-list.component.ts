@@ -1,17 +1,29 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output, TemplateRef, ViewChild } from '@angular/core';
+import { BaseController } from '../../base.controller';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PageHeaderComponent } from '../page-header/page-header.component';
 
 @Component({
   selector: 'app-setup-list',
   standalone: true,
-  imports: [],
+  imports: [PageHeaderComponent,MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent,FormsModule,MatProgressSpinnerModule],
+
   templateUrl: './setup-list.component.html',
   styleUrl: './setup-list.component.scss'
 })
-export class SetupListComponent {
+export class SetupListComponent extends BaseController<any> {
   @Input({ required: true }) datasource: any[]=[];
   @Input({ required: true }) columns: any[]=[];
   @Input() isSearchable: boolean = true;
+  @Input() isAdd: boolean = false;
+  @Input() isCrud: boolean = false;
   @Output() onRowClick = new EventEmitter<any>
+  @Output() onAddEditEvent = new EventEmitter<any>
+  @Output() onDeleteEvent = new EventEmitter<any>
+  @ViewChild('deleteDialog') deleteDialog:TemplateRef<any> | undefined
   // datasource:any[]=[
   //   {
   //     id:'Alfalo',
@@ -85,5 +97,43 @@ export class SetupListComponent {
 
   //   }
   // ]
+
+  constructor(){
+    super()
+  }
+  ngOnInit(){
+    if(this.isCrud){
+      const columns =[
+        {
+          key:'edit',
+          label:"Edit",
+          displayType:'edit'
+
+        },
+        {
+          key:'delete',
+          label:"Delete",
+          displayType:'delete'
+
+        }
+      ]
+      this.columns =[...columns,...(this.columns || [])]
+    }
+  }
+  openDeleteDialog(row:any){
+    if(!this.deleteDialog) return;
+    const dialogRef = this.dialog?.open(this.deleteDialog,{
+      width:'30vw'
+    })
+    dialogRef?.afterClosed().subscribe(x=>{
+      if(x){
+        this.onDeleteEvent.emit(row)
+      }
+    })
+  }
+  ngAfterViewInit(){
+
+
+  }
 
 }

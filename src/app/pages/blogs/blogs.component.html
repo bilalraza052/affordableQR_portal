@@ -1,0 +1,52 @@
+<app-page-header  [pageTitle]="'Blog'"></app-page-header>
+
+<app-setup-list (onDeleteEvent)="deleteRecord($event)" [isCrud]="true" (onAddEditEvent)="openForm($event)" [isAdd]="true" [columns]="columns" [isSearchable]="false"  [datasource]="datasource" ></app-setup-list>
+
+<ng-template #formComponent let-data>
+  <!-- <div class="px-4"> -->
+    <div mat-dialog-title>
+      <div class="d-flex align-items-center justify-content-between">
+        <span class="f-s-24 f-w-b">{{model.id ? 'Edit' :'Add'}} Blogs</span>
+        <span class="material-icons cursor-pointer" mat-dialog-close="">close</span>
+
+      </div>
+
+    </div>
+
+    <mat-dialog-content>
+
+      <input type="text" [(ngModel)]="model.title" class="mx-2"  placeholder="Title">
+      <select name="" id=""[(ngModel)]="model.category">
+          <option [value]="undefined">Categories</option>
+          @for(item of categoryList;track item){
+            <option [value]="item.id">{{item.title}}</option>
+          }
+      </select>
+
+
+      @if (imageTitle) {
+        <p class="text-dark my-2">
+          Selected Image : <a [href]="imageTitle" target="_blank" download>{{imageTitle}}</a>
+
+        </p>
+      }
+
+      <input type="file" (change)="onFileChange($event)" [(ngModel)]="imageTitle" class="form-control w-100">
+      <div class="NgxEditor__Wrapper my-4">
+        <ngx-editor-menu [toolbar]="toolbar" [editor]="editor"> </ngx-editor-menu>
+        <ngx-editor [editor]="editor"  (ngModelChange)="onChange($event)" [ngModel]="html" [disabled]="false" [placeholder]="'Descriptions'"></ngx-editor>
+      </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="button-primary" (click)="save()">
+          @if(saveLoader){
+            <mat-spinner color="secondary" [diameter]="20"> </mat-spinner>
+          }@else {
+            Save
+          }
+        </button>
+    </mat-dialog-actions>
+
+  <!-- </div> -->
+</ng-template>

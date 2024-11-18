@@ -1,0 +1,33 @@
+input {
+  border-radius: 8.94px;
+  background: #f0f0f0;
+  outline: none;
+  border: none;
+  padding: 20px;
+
+  width: 406.917px;
+  height: 47.546px;
+  backdrop-filter: blur(22.351093292236328px);
+  color: #737373;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  ::placeholder {
+    color: #737373;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+::ng-deep.mdc-circular-progress__circle-clipper .mdc-circular-progress__indeterminate-circle-graphic {
+
+  stroke: white!important;
+}

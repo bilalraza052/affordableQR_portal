@@ -213,7 +213,7 @@ export abstract class BaseService {
     if (key) {
       return await this.Put(key, model)
     }
-    return await this.Post('POST', model)
+    return await this.Post('', model)
   }
 
   async getDataById(primaryKey?: any) {
