@@ -68,13 +68,16 @@ export abstract class BaseService {
       resObj.statusCode = fullRes.status;
       if (fullRes.status === 401) {
         this.route.navigate(['/authentication/login'])
-        resObj.Errors = 'Session Expired'
+        resObj.Errors = fullRes.error && fullRes.error.message ? fullRes.error.message : fullRes.error.error
+
+        resObj.IsSuccessful = false;
 
       } else if (fullRes.status == 504) {
         resObj.Errors = 'Connection Error'
 
       } else if (fullRes.status === 400) {
         resObj.Errors = fullRes.error && fullRes.error.message ? fullRes.error.message : fullRes.error.error
+        // resObj.Errors = fullRes.messsgae
         resObj.IsSuccessful = false;
 
       }

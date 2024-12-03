@@ -46,7 +46,7 @@ export class AuthComponent extends BaseController<any> {
     if(!res.IsSuccessful){
       return this.showError(res.Errors)
     }
-    this.showError("Register Successfully");
+    this.showError(res.Data.message);
     this.tabIndex = 0
   }
 

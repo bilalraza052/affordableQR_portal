@@ -131,7 +131,7 @@ export class BlogsComponent extends BaseController<any> {
     }
     async deleteRecord(row:any){
       this.main.isCustomControler = true
-      this.main.customController = 'blogcategories'
+      this.main.customController = 'blog'
       this.saveLoader = true
       const res= await (await this.main.Delete(row.id)).toPromise();
       this.main.customController = ''
@@ -140,6 +140,7 @@ export class BlogsComponent extends BaseController<any> {
       this.saveLoader = false
       if(!res.IsSuccessful) return this.showError(res.Errors);
       this.showError("Delete Successfully");
+      this.getData()
       this.dialog?.closeAll()
 
     }
