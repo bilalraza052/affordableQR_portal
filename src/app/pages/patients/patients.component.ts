@@ -10,50 +10,7 @@ import { SetupListComponent } from '../../shared-component/setup-list/setup-list
   styleUrl: './patients.component.scss'
 })
 export class PatientsComponent {
-  datasource:any[]=[
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-
-
-    },
-  ]
+  datasource:any[]=[]
   columns:any[]=[
     {
       label:'Id',

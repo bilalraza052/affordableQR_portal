@@ -14,50 +14,7 @@ export class ProvidersListComponent {
   constructor(public router:Router){
 
   }
-   datasource:any[]=[
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-    {
-      id:'Alfalo',
-      numOfProvider:'Alexis Alfaro',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-  ]
+   datasource:any[]=[]
   columns:any[]=[
     {
       label:'Id',

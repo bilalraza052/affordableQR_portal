@@ -14,26 +14,7 @@ export class GroupListComponent {
   constructor(public router:Router){
 
   }
-  datasource:any[]=[
-    {
-      name:'Comfort',
-      speciality:'Anesthesia',
-      numOfProvider:'10000',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-    {
-      name:'DLP Eye Group',
-      speciality:'Optometry',
-      numOfProvider:'3250',
-      numOfPatients:'149',
-      score:'95.00'
-
-    },
-
-
-  ]
+  datasource:any[]=[]
   columns:any[]=[
     {
       label:'Name',
