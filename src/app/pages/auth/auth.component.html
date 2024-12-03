@@ -13,6 +13,9 @@
             <input type="password" (keyup.enter)="login()" [(ngModel)]="model.password" placeholder="Password">
 
           </div>
+          <div class="text-end  fix-width mb-2">
+            <a class=" signup cursor-pointer text-underline " (click)="forgetPassword()">Forget Password</a>
+          </div>
           <button class="login-button" (click)="login()">Login</button>
 
         </div>
@@ -73,3 +76,29 @@
   </div>
 
 </div>
+
+<ng-template #changePasswordDialog>
+  <mat-dialog-content>
+    <div class="field-input d-flex flex-column">
+      <input type="text" [(ngModel)]="model.reset_code" placeholder="Reset Code">
+      <input type="password" [(ngModel)]="model.new_password" placeholder="New Password">
+      <input type="password" [(ngModel)]="model.new_password_confirmation" placeholder="Confirm New Password">
+
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="button-primary" (click)="updatePassword()">
+      @if(loader){
+        <mat-spinner color="secondary" [diameter]="20"> </mat-spinner>
+      }@else {
+        Update Password
+      }
+    </button>
+
+  </mat-dialog-actions>
+
+
+</ng-template>
+

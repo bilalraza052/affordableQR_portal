@@ -16,7 +16,37 @@
       <input type="text" class="w-100" placeholder="Search">
 
     </div>
-    <img [matTooltip]="usersInfo.firstName" src="../../../assets/images/Ellipse 1.png">
+    <img [matMenuTriggerFor]="matMenu" [matTooltip]="usersInfo.firstName" src="../../../assets/images/Ellipse 1.png">
   </div>
 
+  <mat-menu #matMenu>
+    <button mat-menu-item (click)="changePassword()">Change Password</button>
+  </mat-menu>
+
 </div>
+
+
+<ng-template #changePasswordDialog>
+  <mat-dialog-content>
+    <div class="field-input d-flex flex-column">
+      <input type="password" [(ngModel)]="model.old_password" placeholder="Old Password">
+      <input type="password" [(ngModel)]="model.new_password" placeholder="New Password">
+      <input type="password" [(ngModel)]="model.new_password_confirmation" placeholder="Confirm New Password">
+
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button class="button-primary" (click)="updatePassword()">
+      @if(loader){
+        <mat-spinner color="secondary" [diameter]="20"> </mat-spinner>
+      }@else {
+        Update Password
+      }
+    </button>
+
+  </mat-dialog-actions>
+
+
+</ng-template>

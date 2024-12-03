@@ -16,6 +16,12 @@ export class UsersComponent extends BaseController<any> {
   datasource:any[]=[]
   columns:any[]=[
     {
+      key:'delete',
+      label:"Delete",
+      displayType:'delete'
+
+    },
+    {
       label:'First Name',
       key:'firstName'
 
@@ -49,6 +55,18 @@ export class UsersComponent extends BaseController<any> {
   constructor(public mainSerice:MainServiceService){
     super();
   }
+  async deleteRecord(row:any){
+    this.mainSerice.isCustomControler = true
+    this.mainSerice.customController = 'delete-user'
+    const res= await (await this.mainSerice.Delete(row.id)).toPromise();
+    this.mainSerice.customController = ''
+    this.mainSerice.isCustomControler = false
+    if(!res.IsSuccessful) return this.showError(res.Errors);
+    this.showError("Delete Successfully");
+    this.dialog?.closeAll()
+    this.users()
+
+  }
   async users(){
     const res= await (await this.mainSerice.users()).toPromise();
     if(!res.IsSuccessful){
@@ -57,6 +75,8 @@ export class UsersComponent extends BaseController<any> {
     this.datasource = res.Data
 
   }
+
+
 
 
   ngOnInit(){
