@@ -43,50 +43,108 @@
           </tr>
         </thead>
         <tbody>
-          @for(item of datasource;track item){
-          <!-- <th>{{item.label}}</th> -->
-          <tr class="body-row" (click)="onRowClick.emit(item)">
-            @for(col of columns;track col){
-            <td>
-              @switch (col.displayType) {
-                @case ("score") {
-                  <svg xmlns="http://www.w3.org/2000/svg" width="173" height="30" viewBox="0 0 173 30" fill="none">
-                    <rect x="172.515" y="29.6311" width="172.485" height="29.1254" rx="4" transform="rotate(180 172.515 29.6311)" fill="#FFB300"/>
-                    <path d="M172.515 25.6311C172.515 27.8402 170.724 29.6311 168.515 29.6311H137.445V0.505737H168.515C170.724 0.505737 172.515 2.2966 172.515 4.50574V25.6311Z" fill="#FFEBBD"/>
-                  </svg>
-                  <span class="mx-2">
-                    {{ item[col.key] }}
+        
+          @if(this.isGroupable){
+            @for(item of datasource | keyvalue;track item){
+              <tr>
+                <td colspan="20">
+                  <mat-expansion-panel class="w-100" >
+                    <mat-expansion-panel-header>
+                      <mat-panel-title> {{headerCaption}} {{item.key}}</mat-panel-title>
+                      @if(this.range){
+                        <mat-panel-description>
+                          <div class="w-100 d-flex justify-content-end align-items-center mx-2">
+                            {{this.range.Measure}}
+                            <div class="background mx-2">
+                              <div class="range" [style.width]="range.achievement_points * 10+'%'">
+    
+                              </div>
+                              
+                            </div>
+                            {{range.achievement_points}}
+                          </div>
+                        
+                         
+                        
+                        </mat-panel-description>
+                      }
+                    
+                    </mat-expansion-panel-header>
+                    <div class="table-container">
+                      <table class="w-100">
+                        <tbody>
+                          @for(row of item.value;track row) {
+                            <tr>
+                              @for(col of columns;track col) {
+                                <td>{{ row[col.key] }}</td>
+                              }
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                
+                
+                  </mat-expansion-panel>
+                </td>
+             
+              </tr>
+           
+        
 
-                  </span>
-                }
-                @case ("edit") {
-                  <svg (click)="onAddEditEvent.emit(item)" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                    <path d="M6.96236 2.26689H2.09919C1.73068 2.26689 1.37726 2.41328 1.11668 2.67386C0.856108 2.93443 0.709717 3.28785 0.709717 3.65636V13.3827C0.709717 13.7512 0.856108 14.1046 1.11668 14.3652C1.37726 14.6258 1.73068 14.7722 2.09919 14.7722H11.8255C12.194 14.7722 12.5475 14.6258 12.808 14.3652C13.0686 14.1046 13.215 13.7512 13.215 13.3827V8.51953M11.3913 2.00636C11.6677 1.72998 12.0426 1.57471 12.4334 1.57471C12.8243 1.57471 13.1991 1.72998 13.4755 2.00636C13.7519 2.28275 13.9072 2.6576 13.9072 3.04847C13.9072 3.43933 13.7519 3.81419 13.4755 4.09058L7.21385 10.3529C7.04889 10.5178 6.84509 10.6384 6.62124 10.7038L4.62526 11.2874C4.56548 11.3048 4.50211 11.3058 4.44179 11.2904C4.38146 11.2749 4.3264 11.2436 4.28237 11.1995C4.23834 11.1555 4.20695 11.1004 4.1915 11.0401C4.17604 10.9798 4.17709 10.9164 4.19452 10.8566L4.7781 8.86065C4.84377 8.63698 4.96466 8.43342 5.12964 8.26873L11.3913 2.00636Z" stroke="#555555" stroke-width="1.38948" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                }
-                @case ("delete") {
-                    <span class="material-icons text-danger cursor-pointer" (click)="openDeleteDialog(item)">delete</span>
-                }
-                @case ("download"){
-                  <a [href]="item[col.key]" target="_blank" download>{{item[col.key]}}</a>
-                }
-                @default {
+             
+             
+             
 
-                  @if(col.objectName){
-                    {{item[col.objectName][col.key]}}
-                  }@else {
-                    {{ item[col.key] }}
-
-                  }
-
-                }
             }
 
-
-            </td>
-            }
-          </tr>
+          }@else {
+            @for(item of datasource;track item){
+              <!-- <th>{{item.label}}</th> -->
+              <tr class="body-row" (click)="onRowClick.emit(item)">
+                @for(col of columns;track col){
+                <td>
+                  @switch (col.displayType) {
+                    @case ("score") {
+                      <svg xmlns="http://www.w3.org/2000/svg" width="173" height="30" viewBox="0 0 173 30" fill="none">
+                        <rect x="172.515" y="29.6311" width="172.485" height="29.1254" rx="4" transform="rotate(180 172.515 29.6311)" fill="#FFB300"/>
+                        <path d="M172.515 25.6311C172.515 27.8402 170.724 29.6311 168.515 29.6311H137.445V0.505737H168.515C170.724 0.505737 172.515 2.2966 172.515 4.50574V25.6311Z" fill="#FFEBBD"/>
+                      </svg>
+                      <span class="mx-2">
+                        {{ item[col.key] }}
+    
+                      </span>
+                    }
+                    @case ("edit") {
+                      <svg (click)="onAddEditEvent.emit(item)" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                        <path d="M6.96236 2.26689H2.09919C1.73068 2.26689 1.37726 2.41328 1.11668 2.67386C0.856108 2.93443 0.709717 3.28785 0.709717 3.65636V13.3827C0.709717 13.7512 0.856108 14.1046 1.11668 14.3652C1.37726 14.6258 1.73068 14.7722 2.09919 14.7722H11.8255C12.194 14.7722 12.5475 14.6258 12.808 14.3652C13.0686 14.1046 13.215 13.7512 13.215 13.3827V8.51953M11.3913 2.00636C11.6677 1.72998 12.0426 1.57471 12.4334 1.57471C12.8243 1.57471 13.1991 1.72998 13.4755 2.00636C13.7519 2.28275 13.9072 2.6576 13.9072 3.04847C13.9072 3.43933 13.7519 3.81419 13.4755 4.09058L7.21385 10.3529C7.04889 10.5178 6.84509 10.6384 6.62124 10.7038L4.62526 11.2874C4.56548 11.3048 4.50211 11.3058 4.44179 11.2904C4.38146 11.2749 4.3264 11.2436 4.28237 11.1995C4.23834 11.1555 4.20695 11.1004 4.1915 11.0401C4.17604 10.9798 4.17709 10.9164 4.19452 10.8566L4.7781 8.86065C4.84377 8.63698 4.96466 8.43342 5.12964 8.26873L11.3913 2.00636Z" stroke="#555555" stroke-width="1.38948" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    }
+                    @case ("delete") {
+                        <span class="material-icons text-danger cursor-pointer" (click)="openDeleteDialog(item)">delete</span>
+                    }
+                    @case ("download"){
+                      <a [href]="item[col.key]" target="_blank" download>{{item[col.key]}}</a>
+                    }
+                    @default {
+    
+                      @if(col.objectName){
+                        {{item[col.objectName][col.key]}}
+                      }@else {
+                        {{ item[col.key] }}
+    
+                      }
+    
+                    }
+                }
+    
+    
+                </td>
+                }
+              </tr>
+              }
           }
+         
           <!-- <tr class="body-row">
             <td>Alfalo</td>
             <td>Alexis Alfaro</td>

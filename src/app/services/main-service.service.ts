@@ -37,6 +37,14 @@ export class MainServiceService extends BaseService {
       roleId: [1, 2],
     },
     {
+      route: 'upload-patients',
+      label: 'Upload Patients',
+      svg:`<svg xmlns="http://www.w3.org/2000/svg" width="26" height="21" viewBox="0 0 23 21" fill="none">
+                    <path d="M3.44126 13.68C2.6983 12.9209 2.13783 12.0027 1.80229 10.9949C1.46676 9.98713 1.36496 8.91621 1.50462 7.86327C1.64427 6.81032 2.02171 5.80297 2.60835 4.9175C3.19499 4.03203 3.97544 3.29168 4.89059 2.75252C5.80574 2.21335 6.83158 1.88952 7.89042 1.80554C8.94926 1.72157 10.0133 1.87965 11.002 2.26782C11.9907 2.656 12.8781 3.26408 13.597 4.046C14.3159 4.82793 14.8474 5.7632 15.1513 6.78096H16.9413C17.9068 6.78085 18.8467 7.09129 19.6222 7.66641C20.3978 8.24152 20.9678 9.05083 21.248 9.97477C21.5283 10.8987 21.5039 11.8883 21.1786 12.7973C20.8532 13.7064 20.2441 14.4867 19.4413 15.023M11.4413 10.781V19.781M11.4413 10.781L15.4413 14.781M11.4413 10.781L7.44126 14.781" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`,
+      roleId: [1, 2],
+    },
+    {
       route: 'users',
       label: 'Users',
       svg:` <svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 19 22" fill="none">
@@ -107,6 +115,10 @@ export class MainServiceService extends BaseService {
       fileLink:base64
     }
     return await this.Post("upload-file",body)
+  }
+  async uploadPatients(body:any){
+   
+    return await this.Post("upload-patients",body)
   }
   async uploaded(){
     return await this.Get('uploaded-files')

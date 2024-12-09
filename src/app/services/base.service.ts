@@ -98,7 +98,6 @@ export abstract class BaseService {
       branchId = JSON.parse(branchData).id;
     }
     let headersConfig: any = {
-      'Content-Type': 'application/json',
        Authorization: `Bearer ${token}`,
        'Access-Control-Expose-Headers': '*',
        'Access-Control-Allow-Headers':'*',

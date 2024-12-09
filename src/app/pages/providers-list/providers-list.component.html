@@ -1,2 +1,2 @@
 <app-page-header [pageTitle]="'Providers'"></app-page-header>
-<app-setup-list [columns]="columns" (onRowClick)="onRowClick($event)" [datasource]="datasource"></app-setup-list>
+<app-setup-list [range]="scoring" [headerCaption]="'PROVIDER:'" [isGroupable]="true" [columns]="columns" [datasource]="datasource"></app-setup-list>

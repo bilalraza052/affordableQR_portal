@@ -36,6 +36,35 @@
   max-height: calc(100vh - 200px);
   overflow: auto;
 }
+.head-body {
+  border-radius: 10px;
+  background: #ffb300a0;
+  width: 100%;
+  height: 45px;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-transform: capitalize;
+  position: sticky;
+  top: 0px;
+  th:first-child {
+    /* Your CSS styles here */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  /* Target the last th in every row */
+  th:last-child {
+    /* Your CSS styles here */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
 table {
   border-collapse: separate;
   border-spacing: 0 15px;
@@ -55,6 +84,9 @@ table {
     text-transform: capitalize;
     position: sticky;
     top: 0px;
+    th{
+      width: 114.92px;
+    }
     th:first-child {
       /* Your CSS styles here */
       border-top-left-radius: 10px;
@@ -102,4 +134,48 @@ table {
 
 .f-s-20{
   font-size: 20px;
+}
+
+.table-container {
+  width: 100%;
+  display: block;
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+}
+
+::ng-deep .mat-expansion-panel{
+  background: white!important;
+  color: black;
+}
+
+::ng-deep .mat-expansion-panel-body{
+  padding: 0px 0px 16px!important;
+}
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
+  font-weight: 500;
+  color: black;
+}
+::ng-deep .mat-expansion-indicator::after{
+  color: black!important;
+}
+
+.background{
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(255, 235, 189);
+
+}
+.range{
+  background-color: rgb(255, 179, 0);
+  height: 40px;
+  border-radius: 10px;
+
+
 }

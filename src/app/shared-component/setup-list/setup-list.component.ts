@@ -2,14 +2,16 @@ import { Component, EventEmitter, Input, Output, output, TemplateRef, ViewChild 
 import { BaseController } from '../../base.controller';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageHeaderComponent } from '../page-header/page-header.component';
+import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-setup-list',
   standalone: true,
-  imports: [PageHeaderComponent,MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent,FormsModule,MatProgressSpinnerModule],
+  imports: [PageHeaderComponent,MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent,FormsModule,MatProgressSpinnerModule,KeyValuePipe,MatExpansionModule],
 
   templateUrl: './setup-list.component.html',
   styleUrl: './setup-list.component.scss'
@@ -19,7 +21,10 @@ export class SetupListComponent extends BaseController<any> {
   @Input({ required: true }) columns: any[]=[];
   @Input() isSearchable: boolean = true;
   @Input() isAdd: boolean = false;
+  @Input() isGroupable: boolean = false;
+  @Input() headerCaption: string = '';
   @Input() isCrud: boolean = false;
+  @Input() range: any = {};
   @Output() onRowClick = new EventEmitter<any>
   @Output() onAddEditEvent = new EventEmitter<any>
   @Output() onDeleteEvent = new EventEmitter<any>

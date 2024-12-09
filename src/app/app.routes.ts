@@ -16,6 +16,7 @@ import { RightsGuard } from './Guards/rights.guard';
 import { NotificationComponent } from './pages/notification/notification.component';
 import { BlogCategoryComponent } from './pages/blog-category/blog-category.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
+import { UploadPatientsComponent } from './pages/upload-patients/upload-patients.component';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,9 @@ export const routes: Routes = [
       },
       {
         path:'upload', component:UploadComponent
+      },
+      {
+        path:'upload-patients', component:UploadPatientsComponent
       },
       {
         path:'settings', component:SettingComponent

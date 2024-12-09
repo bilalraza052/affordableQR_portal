@@ -1,0 +1,40 @@
+.subTitle {
+  color: #000;
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+::ng-deep .ngx-file-drop__drop-zone {
+  border-radius: 24.091px !important;
+  background: #f9f9f9 !important;
+  height: 300px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 18px solid white !important;
+}
+
+::ng-deep .ngx-file-drop__content {
+  color: #9d9d9d!important;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.button-primary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  margin-top: 10px;
+}
+::ng-deep.mdc-circular-progress__circle-clipper .mdc-circular-progress__indeterminate-circle-graphic {
+
+  stroke: white!important;
+}
